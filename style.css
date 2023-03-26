@@ -179,6 +179,10 @@ main {
   cursor: not-allowed;
 }
 
+.janken-hand-button-wrapper {
+  margin: 10px 0;
+}
+
 .janken-hand-button {
   margin: 0 5px !important;
 }
