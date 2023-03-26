@@ -1,0 +1,267 @@
+:root {
+  --green: #4caf50;
+  --orange: #f8a055;
+  --red: #ff0000;
+  --black: #4a4a4a;
+
+  --roulette-size: 400px;
+  --slice-base-length: 108px;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+/* ボタンのデフォルトスタイルをリセットするCSS */
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+/* *************************************************************** */
+/* main */
+/* *************************************************************** */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* *************************************************************** */
+/* title */
+/* *************************************************************** */
+.title {
+  margin-bottom: 20px;
+}
+
+/* *************************************************************** */
+/* game-display */
+/* *************************************************************** */
+.game-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* *************************************************************** */
+/* roulette */
+/* *************************************************************** */
+#roulette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--roulette-size);
+  height: var(--roulette-size);
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.janken-hand-wrapper {
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.slice {
+  position: relative;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 0;
+  height: 0;
+}
+
+.slice-number {
+  position: absolute;
+  top: -190px;
+  font-size: 24px;
+  color: white;
+}
+
+.slice-color {
+  /* 何故割る8なのか? */
+  border-left: calc(var(--roulette-size) / 8) solid transparent;
+  border-right: calc(var(--roulette-size) / 8) solid transparent;
+  border-top: calc(var(--roulette-size) / 2) solid var(--orange);
+  border-bottom: calc(var(--roulette-size) / 2) solid transparent;
+}
+
+.slice-color.odd {
+  border-top-color: var(--green);
+}
+
+.slice-color.even {
+  border-top-color: var(--orange);
+}
+
+.slice-color.active {
+  border-top-color: var(--red);
+}
+
+.slice:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.slice:nth-child(2) {
+  transform: rotate(30deg);
+}
+
+.slice:nth-child(3) {
+  transform: rotate(60deg);
+}
+
+.slice:nth-child(4) {
+  transform: rotate(90deg);
+}
+
+.slice:nth-child(5) {
+  transform: rotate(120deg);
+}
+
+.slice:nth-child(6) {
+  transform: rotate(150deg);
+}
+
+.slice:nth-child(7) {
+  transform: rotate(180deg);
+}
+
+.slice:nth-child(8) {
+  transform: rotate(210deg);
+}
+
+.slice:nth-child(9) {
+  transform: rotate(240deg);
+}
+
+.slice:nth-child(10) {
+  transform: rotate(270deg);
+}
+
+.slice:nth-child(11) {
+  transform: rotate(300deg);
+}
+
+.slice:nth-child(12) {
+  transform: rotate(330deg);
+}
+
+/* *************************************************************** */
+/* janken */
+/* *************************************************************** */
+#janken-hand {
+  max-width: 300px;
+}
+
+#start-janken:disabled {
+  cursor: not-allowed;
+}
+
+.janken-hand-button {
+  margin: 0 5px !important;
+}
+
+.janken-hand-button:disabled,
+.janken-hand-button:disabled > img {
+  cursor: not-allowed;
+}
+
+.janken-hand-button > img {
+  max-width: 50px;
+  cursor: pointer;
+  border: 5px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.janken-hand-button > img:hover {
+  border-color: var(--green);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* *************************************************************** */
+/* ルーレット */
+/* *************************************************************** */
+#stop-roulette:disabled {
+  cursor: not-allowed;
+}
+
+/* *************************************************************** */
+/* control-buttons */
+/* *************************************************************** */
+.control-buttons-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-button {
+  margin: 0 10px;
+  transition: all 0.1s;
+}
+
+.control-button:active {
+  margin: 0 10px;
+  transform: translateY(1px);
+}
+
+.game-button {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: var(--green);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+
+  min-width: 230px;
+  max-width: 230px;
+  text-align: center;
+}
+
+.game-button:hover {
+  background-color: #66bb6a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.game-button:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
+}
+
+/* *************************************************************** */
+/* message-area */
+/* *************************************************************** */
+#message-area {
+  font-family: 'Arial', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}

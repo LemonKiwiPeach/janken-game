@@ -1,0 +1,39 @@
+# ログファイル
+*.log
+
+# ランタイムデータ
+*.pid
+*.seed
+*.pid.lock
+
+# ディレクトリ
+node_modules/
+jspm_packages/
+bower_components/
+
+# ローカル環境設定ファイル
+.env
+.env.local
+
+# 無視するエディタ/IDE設定
+.editorconfig
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+*.orig
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# ビルドしたファイル
+dist/
+build/
+
+# Sass キャッシュファイル
+.sass-cache/

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors Roulette</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="title">Rock Paper Scissors Roulette</h1>
+      <section class="game-display">
+        <div id="roulette"></div>
+        <div class="janken-hand-wrapper">
+          <img id="janken-hand" src="./janken_choki.png" alt="Current janken hand" />
+        </div>
+      </section>
+      <nav class="control-buttons-wrapper">
+        <button id="start-janken" class="game-button control-button">Start Game</button>
+
+        <button id="gu" class="janken-hand-button control-button" data-janken-pattern="0" type="button" disabled>
+          <img src="./janken_gu.png" alt="Rock" />
+        </button>
+
+        <button id="choki" class="janken-hand-button control-button" data-janken-pattern="1" type="button" disabled>
+          <img src="./janken_choki.png" alt="Scissors" />
+        </button>
+
+        <button id="pa" class="janken-hand-button control-button" data-janken-pattern="2" type="button" disabled>
+          <img src="./janken_pa.png" alt="Paper" />
+        </button>
+
+        <button id="stop-roulette" class="game-button control-button" disabled>Stop Roulette</button>
+      </nav>
+
+      <section id="message-area">Press the start button</section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
