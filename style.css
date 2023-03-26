@@ -47,6 +47,7 @@ main {
 /* *************************************************************** */
 .title {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* *************************************************************** */
@@ -78,6 +79,7 @@ main {
   background-color: #ffffff;
   position: absolute;
   border-radius: 50%;
+  margin: 5px 0;
 }
 
 .slice {
@@ -215,6 +217,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .control-button {
